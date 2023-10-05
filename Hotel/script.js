@@ -82,7 +82,7 @@ function login(){
     })
     .then(res => res.text())
     .then(res => { console.log(res); return res})
-    .then(res => newUser(res.object))
+    /*.then(res => newUser(res.object))*/
     .then(res => {
         if(!res.status != "OK"){
             console.log("erro");
@@ -111,7 +111,7 @@ function logout(){
 }
 
 function redirectToHome(){
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
 }
 
 function redirectToLogin(){

@@ -32,7 +32,15 @@ function registerReservation(){
     .then(res => res.text())
     .then(res => { console.log(res); return res})
     .then(alert("Reserva cadastrada"))
+    .then(res => {if(!res.status != "OK"){
+        console.log("erro");
+    }
+    redirectToHome();})
     .catch(err => console.log(err.message))  
+}
+
+function redirectToHome(){
+    window.location.href = "../index.html"
 }
 
 function loadReservations(){
@@ -47,13 +55,16 @@ function printReservations(list){
         cards +=
             `<section class="reservation-section">
                 <div class="reservation-card">
-                    <div class="reservation-info" id="client-${reservation.id}">
-                        <h2>ID: ${reservation.id}</h2>
+                    <div class="reservation-info" id="reservation-${reservation.id}">
+                        <p><h2>ID: ${reservation.id}<i class="fa fa-close w3-right" onclick="deleteReservation(${reservation.id})"></i>
+                                                    <i class="fa fa-edit w3-right"></i></h2></p>
                         <p>Nome Cliente: ${reservation.user.firstName} ${reservation.user.lastName}</p>
-                        <p>CPF: ${reservation.user.cpf} | E-mail: ${reservation.user.email}</p>
-                        <p>Check-In: ${reservation.checkIn} | Check-Out: ${reservation.checkOut}</p>
+                        <p>CPF: ${reservation.user.cpf}</p>
+                        <p>E-mail: ${reservation.user.email}</p>
+                        <p>Check-In: ${reservation.checkIn}</p>
+                        <p>Check-Out: ${reservation.checkOut}</p>
                         <p>Adulto(s): ${reservation.adultNum} | Criança(s): ${reservation.childNum}</p>
-                        <p>Quarto: ${reservation.room.name} | Valor: ${reservation.price}</p>
+                        <p>Quarto: ${reservation.room.name} | Valor: R$${reservation.price},00</p>
                     </div>
                 </div>
             </section>`
@@ -63,4 +74,27 @@ function printReservations(list){
     
     let main = document.getElementById("main");
     main.innerHTML = cards;
+}
+
+function deleteReservation(id){
+    const confirmation = confirm('Tem certeza de que deseja excluir esta reserva?');
+    if (!confirmation) {
+        return;
+    }
+
+    fetch(`http://localhost:8090/api/reservations/${id}`, {method: 'DELETE'})
+        .then(res => res.json)
+        .then(alert("Reserva excluída com sucesso!"))
+        .then(loadReservations())
+        .catch(err => alert(err.message));
+}
+
+function redirectToUpdate(){
+    window.location = "reservations-update.html";
+}
+
+function updateReservation(id){
+
+
+    redirectToUpdate();
 }

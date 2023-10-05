@@ -84,3 +84,7 @@ main {
 .reservation-info {
     overflow: hidden; /* Limpa o float para evitar problemas de layout. */
 }
+
+i:hover{
+    cursor: pointer;
+}
