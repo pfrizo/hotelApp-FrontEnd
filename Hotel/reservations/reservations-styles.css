@@ -1,0 +1,86 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Conteúdo da Página de Registro de Reservas */
+.registration-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.registration-form h2 {
+    color: #333;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="date"],
+.registration-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.date-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+main {
+    flex-direction: column; /* Organiza os cards em uma coluna vertical. */
+}
+
+.reservation-section {
+    margin-bottom: 20px; /* Adiciona um espaço entre os cards. */
+}
+
+.reservation-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Limpa o float para evitar problemas de layout. */
+}
+
+.reservation-info {
+    overflow: hidden; /* Limpa o float para evitar problemas de layout. */
+}

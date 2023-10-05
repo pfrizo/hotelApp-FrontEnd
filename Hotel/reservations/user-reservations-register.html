@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="reservations-styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registro de Reservas</title>
+
+    <script src="reservations-script.js"></script>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+		<a href="../index.html" class="w3-red"><i class="fa fa-bed w3-margin-right"></i><h1>Hotel</h1></a>
+	</header>
+    <!-- Conteúdo da Página de Registro de Reservas -->
+    <main>
+        <section class="registration-form">
+            <!-- <h2>Registre sua Reserva</h2>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <div class="date-inputs">
+                    <div class="date-input">
+                        <label for="data_checkin">Check-in:</label>
+                        <input type="date" id="data_checkin" name="data_checkin" required>
+                    </div>
+                    <div class="date-input">
+                        <label for="data_checkout">Check-out:</label>
+                        <input type="date" id="data_checkout" name="data_checkout" required>
+                    </div>
+                </div>
+
+                <button type="submit">Registrar Reserva</button> -->
+
+                <div>
+                    <div class="w3-container w3-red">
+                        <h2><i class="fa fa-bed w3-margin-right"></i>Reserva</h2>					
+                    </div>
+                     <div class="w3-container w3-white w3-padding-16">
+                        <!-- <form> -->
+                            <div class="w3-row-padding" style="margin: 0 -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-user"></i> Nome</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu nome" id="first-name" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class=""></i> Sobrenome</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu sobrenome" id="last-name" required>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-file"></i> CPF</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu CPF" id="cpf" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-at"></i> E-mail</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu email" id="email" required>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-calendar-o"></i> Data de Entrada</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="date" id="check-in" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-calendar-o"></i> Data de Saída</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="date" id="check-out" required>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-male"></i> Adulto(s)</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="number" placeholder="Quantidade de adultos" id="adult-num" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-child"></i> Criança(s)</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="number" placeholder="Quantidade de crianças" id="child-num" required>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-bed"></i> Tipo de quarto</label>
+                                    <select class="w3-select w3-border" id="room-combobox" name="combobox">
+                                        <option value="1">Quarto de solteiro</option>
+                                        <option value="2">Quarto de casal</option>
+                                        <option value="3">Quarto de luxo</option>
+                                    </select>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-money"></i> Preço</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="number" placeholder="" id="price" disabled>
+                                </div>
+                            </div>
+                            
+                            <button class="w3-button w3-dark-grey" style="border-radius: 5px;" onclick="registerReservation()">Registrar</button>
+                        <!-- </form> -->
+                    </div> 
+                </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Hotel</p>
+    </footer>
+
+</body>
+</html>
