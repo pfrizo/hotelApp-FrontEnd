@@ -26,7 +26,7 @@ function printRoom(room, cardId){
             <p>${room.desc}</p>
             <p>Tamanho: ${room.size}</p>
             <p>Quantidade de pessoas recomendada: ${room.guests}</p>
-            <p>R$ ${room.dailyValue}</p>`
+            <p>Diária: R$ ${room.dailyValue},00</p>`
 
     cardId.innerHTML = data;
 }

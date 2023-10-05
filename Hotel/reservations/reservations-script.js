@@ -56,8 +56,8 @@ function printReservations(list){
             `<section class="reservation-section">
                 <div class="reservation-card">
                     <div class="reservation-info" id="reservation-${reservation.id}">
-                        <p><h2>ID: ${reservation.id}<i class="fa fa-close w3-right" onclick="deleteReservation(${reservation.id})"></i>
-                                                    <i class="fa fa-edit w3-right"></i></h2></p>
+                        <p><h2>ID: ${reservation.id}<i class="fa fa-close right" onclick="deleteReservation(${reservation.id})"></i>
+                                                    <i class="fa fa-edit right"></i></h2></p>
                         <p>Nome Cliente: ${reservation.user.firstName} ${reservation.user.lastName}</p>
                         <p>CPF: ${reservation.user.cpf}</p>
                         <p>E-mail: ${reservation.user.email}</p>

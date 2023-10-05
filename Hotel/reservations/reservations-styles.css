@@ -88,3 +88,7 @@ main {
 i:hover{
     cursor: pointer;
 }
+
+i.right {
+    float:right;
+}

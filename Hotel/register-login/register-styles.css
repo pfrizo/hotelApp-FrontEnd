@@ -62,3 +62,8 @@ nav ul li a {
     flex: 1;
     margin-right: 10px;
 }
+
+/*Inserido Novo*/
+label {
+    text-align: left;
+}
