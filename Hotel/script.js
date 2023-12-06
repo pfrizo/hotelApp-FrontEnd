@@ -1,12 +1,13 @@
 let user = {
-    firstName: "pedro",
-    lastName: "frizo",
-    email: "jfdh",
-    cpf: "12232"
+    id: localStorage.getItem('id'),
+    firstName: localStorage.getItem('firstName'),
+    lastName: localStorage.getItem('lastName'),
+    email: localStorage.getItem('email'),
+    cpf: localStorage.getItem('cpf')
 };
 
-/*function loadHome(){
-    if(user.firstName != null){
+function loadHome(){
+    if(user.id !== null){
         let home = document.getElementById('home-bar')
 
         home.innerHTML = `<a href="#" class="w3-bar-item w3-button w3-red w3-mobile"><i class="fa fa-bed w3-margin-right"></i>HOTEL</a>
@@ -14,10 +15,9 @@ let user = {
                         <a href="#sobre" class="w3-bar-item w3-button w3-mobile">Sobre</a>
                         <a href="#contato" class="w3-bar-item w3-button w3-mobile">Contato</a>
                         <a href="#" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white" onclick="logout()">Olá, ${user.firstName}</a>
-                        <a href="#contato" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white">Reserve Agora</a>`
+                        <a href="reservations/user-reservations-register.html" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white">Reserve Agora</a>`
     }
-}*/
-
+}
 
 function registerUser() {
 
@@ -80,19 +80,25 @@ function login(){
         method: "POST",
         body: JSON.stringify(obj)
     })
-    .then(res => res.text())
-    .then(res => { console.log(res); return res})
-    /*.then(res => newUser(res.object))*/
+    .then(res => res.json())
     .then(res => {
-        if(!res.status != "OK"){
-            console.log("erro");
+        if(res.status !== "OK"){
+            console.log("Erro de login");
+        } else {
+            localStorage.setItem('id', res.object.id);
+            localStorage.setItem('firstName', res.object.firstName);
+            localStorage.setItem('lastName', res.object.lastName);
+            localStorage.setItem('email', res.object.email);
+            localStorage.setItem('cpf', res.object.cpf);
+            //newUser(res.object);
+            redirectToHome();
         }
-        redirectToHome();
     })
     .catch(err => console.log(err.message))
 }
 
 function newUser(object){
+    user.id = object.id;
     user.firstName = object.firstName;
     user.lastName = object.lastName;
     user.email = object.email;
@@ -105,8 +111,13 @@ function logout(){
     let conf = confirm("Deseja realmente sair?")
 
     if(conf){
-        user.firstName = null;
-        /*redirectToHome();*/
+        localStorage.removeItem('id');
+        localStorage.removeItem('firstName');
+        localStorage.removeItem('lastName');
+        localStorage.removeItem('email');
+        localStorage.removeItem('cpf');
+        /*loadHome();*/
+        window.location.reload();
     }
 }
 
