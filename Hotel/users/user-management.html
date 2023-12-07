@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../register-login/register-styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hotel - Registrar</title>
+    <!-- Inserido Fonte Novo -->
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", Arial, Helvetica, sans-serif;
+        }
+        
+        a:link {
+            text-decoration:none;
+        }
+        
+        a:visited {
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+<body onload="getUser(localStorage.getItem('id'))">
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Hotel</h1>
+    </header>
+
+    <!-- Conteúdo da Página de Registro de Reservas -->
+    <main>
+        <section class="registration-form">
+
+                <div>
+                    <div class="w3-container w3-red">
+                        <h2 class="w3-text-white"><i class="fa fa-bed w3-margin-right"></i>Alterar usuário</h2><!-- Inserido cor branco novo -->						
+                    </div>
+                     <div class="w3-container w3-white w3-padding-16">
+                        <!-- <form> -->
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom w3-centered">
+                                    <label><i class="fa fa-user"></i> Nome</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu nome" id="first-name" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class=""></i> Sobrenome</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu sobrenome" id="last-name" required>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -10px;"> <!-- Inserido Alinhamento Novo -->
+                                <div class="w3-center w3-margin-bottom">
+                                    <label><i class="fa fa-file"></i> CPF</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu CPF" id="cpf" disabled>
+                                </div>
+                            </div>
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-at"></i> E-mail</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite seu email" id="email" required>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <label><i class="fa fa-asterisk"></i> Senha</label>
+                                    <input class="w3-input w3-border" style="border-radius: 5px;" type="text" placeholder="Digite sua senha" id="password" required>
+                                </div>
+                            </div>
+                            
+                            <div class="w3-row-padding" style="margin: 8px -16px;">
+                                <div class="w3-half w3-margin-bottom">
+                                    <button class="w3-button w3-dark-grey" style="border-radius: 5px;" onclick="redirectToHome()">Voltar ao Menu</button>
+                                </div>
+                                <div class="w3-half w3-margin-bottom">
+                                    <button class="w3-button w3-dark-grey" style="border-radius: 5px;" onclick="updateUser()">Atualizar</button>
+                                </div>
+                            </div>
+                        <!-- </form> -->
+                    </div> 
+                </div>
+            <!-- </form> -->
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2023 Hotel</p>
+    </footer>
+
+    <script src="users-script.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

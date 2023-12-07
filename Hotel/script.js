@@ -14,7 +14,9 @@ function loadHome(){
                         <a href="#quartos" class="w3-bar-item w3-button w3-mobile">Quartos</a>
                         <a href="#sobre" class="w3-bar-item w3-button w3-mobile">Sobre</a>
                         <a href="#contato" class="w3-bar-item w3-button w3-mobile">Contato</a>
-                        <a href="#" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white" onclick="logout()">Olá, ${user.firstName}</a>
+                        <a href="reservations/user-reservations-list.html" class="w3-bar-item w3-button w3-mobile">Minhas Reservas</a>
+                        <a href="#" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white" onclick="logout()">Sair</a>
+                        <a href="users/user-management.html" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white">Olá, ${user.firstName}</a>
                         <a href="reservations/user-reservations-register.html" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile w3-border w3-border-white">Reserve Agora</a>`
     }
 }

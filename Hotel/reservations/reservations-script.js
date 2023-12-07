@@ -56,6 +56,12 @@ function loadReservations(){
     .then(res => printReservations(res.object));
 }
 
+function loadUserReservations(){
+    fetch(`http://localhost:8090/api/reservations/listByUser/${localStorage.getItem('id')}`)
+    .then(res => res.json())
+    .then(res => printReservations(res.object));
+}
+
 function getReservation(id){
     fetch(`http://localhost:8090/api/reservations/${id}`)
     .then(res => res.json())
@@ -78,6 +84,10 @@ function loadReservation(obj){
     price.value = obj.price;
 }
 
+function formatCpf(cpf){
+    return cpf.substring(0, 3) + "." + cpf.substring(3, 6) + "." + cpf.substring(6, 9) + "-" + cpf.substring(9);
+}
+
 function printReservations(list){
     let cards = "";
     for (let reservation of list) {
@@ -88,7 +98,7 @@ function printReservations(list){
                         <p><h2>ID: ${reservation.id}<i class="fa fa-close right" onclick="deleteReservation(${reservation.id})"></i>
                                                     <i class="fa fa-edit right" onclick="goToUpdate(${reservation.id})"></i></h2></p>
                         <p>Nome Cliente: ${reservation.user.firstName} ${reservation.user.lastName}</p>
-                        <p>CPF: ${reservation.user.cpf}</p>
+                        <p>CPF: ${formatCpf(reservation.user.cpf)}</p>
                         <p>E-mail: ${reservation.user.email}</p>
                         <p>Check-In: ${reservation.checkIn}</p>
                         <p>Check-Out: ${reservation.checkOut}</p>
@@ -99,7 +109,14 @@ function printReservations(list){
             </section>`
     }
 
-    cards += `<a href="reservations.html" class="info-button">Menu</a>`;
+    let currentPage = window.location.pathname;
+    console.log(currentPage)
+    if(currentPage === '/Hotel/reservations/reservations-list.html'){
+        cards += `<a href="reservations.html" class="info-button">Menu</a>`;
+    } else {
+        cards += `<a href="../index.html" class="info-button">Menu</a>`;
+    }
+    
     
     let main = document.getElementById("main");
     main.innerHTML = cards;
@@ -119,7 +136,13 @@ function deleteReservation(id){
 }
 
 function redirectToUpdate(){
-    window.location.href = "reservations-update.html";
+    let currentPage = window.location.pathname;
+    console.log(currentPage)
+    if(currentPage === '/Hotel/reservations/reservations-list.html'){
+        window.location.href = "reservations-update.html";
+    } else {
+        window.location.href = "user-reservations-update.html";
+    }
 }
 
 function goToUpdate(id){

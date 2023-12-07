@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="reservations-styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Reservas</title>
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Raleway", Arial, Helvetica, sans-serif;
+        }
+        
+        a:link {
+            text-decoration:none;
+        }
+        
+        a:visited {
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+<body onload="loadUserReservations()">
+    <header>
+        <h1>Reservas</h1>
+    </header>
+
+    <main id="main">
+        <section class="reservation-section">
+            <div class="reservation-card">
+                <div class="reservation-info"></div>
+            </div>
+        </section>
+
+        <a href="../index.html" class="info-button">Menu</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Hotel</p>
+    </footer>
+
+    <script src="reservations-script.js"></script>
+</body>
+</html>
