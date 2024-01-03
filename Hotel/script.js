@@ -51,13 +51,13 @@ function registerUser() {
     })
     .then(res => res.text())
     .then(res => { console.log(res); return res})
-    .then(alert("Inserido com sucesso"))
     .then(res => {
         if(!res.status != "OK"){
             console.log("erro");
         }
         redirectToLogin();
     })
+    .then(alert("Inserido com sucesso"))
     .catch(err => console.log(err.message))
 }
 
