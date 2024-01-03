@@ -17,7 +17,7 @@ Lembrando que para tudo funcionar corretamente, é necessário rodar o back-end 
   
 ## Como Usar
 1. Clone este repositório e o repositório que contém o Back-end da aplicação.
-2. Execute a aplicação Back-End
+2. Certifique-se de ter o Java e o Maven instalados. Execute a aplicação Back-End
 3. Abra o arquivo index.html em seu navegador.
 4. Acesse a tela de login, clicando em "Entrar". Em seguida, por se tratar da primeira interação, clique em "Registrar" para criar seu usuário.
 5. Para se registrar na plataforma, preencha o formulário e clique em "Registrar". (O Registro de usuário tem uma validação de e-mail e cpf, portanto utilize dados válidos e não repetidos).
